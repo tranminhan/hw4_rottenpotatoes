@@ -58,4 +58,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def search_tmdb
+    
+  end
 end
