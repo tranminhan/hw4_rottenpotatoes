@@ -9,6 +9,7 @@ describe Movie do
         end 
 
         it 'should raise an InvalidKeyError with no API key' do
+            Movie.stub(:api_key).and_return('')
             lambda { Movie.find_in_tmdb('Inception') }.
             should raise_error(Movie::InvalidKeyError)
         end 

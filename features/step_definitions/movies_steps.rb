@@ -58,3 +58,8 @@ Then /I should see movies sorted in increasing order of release date/ do
   end
   assert page.body =~ Regexp.compile(pattern, Regexp::MULTILINE)
 end 
+
+Then /the director of "(.*)" should be "(.*)"/ do |title, director|
+  movie = Movie.find_by_title(title)
+  assert movie.director.should == director
+end 
