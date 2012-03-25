@@ -15,6 +15,9 @@ Rottenpotatoes::Application.routes.draw do
   resources :movies
   
   post '/movies/search_tmdb'
+
+  match ':controller/:action/:id'
+
   # Sample resource route with options:
   #   resources :products do
   #     member do

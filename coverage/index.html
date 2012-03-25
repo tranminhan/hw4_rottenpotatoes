@@ -21,21 +21,21 @@
       <img src="./assets/0.4.5/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-25T22:50:55+07:00">2012-03-25T22:50:55+07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-26T01:55:20+07:00">2012-03-26T01:55:20+07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     All Files
-    (<span class="red">65.66%</span>)
+    (<span class="red">70.0%</span>)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>16</b> files in total.
-    <b>99</b> relevant lines. 
-    <span class="green"><b>65</b> lines covered</span> and
-    <span class="red"><b>34</b> lines missed </span>
+    <b>17</b> files in total.
+    <b>110</b> relevant lines. 
+    <span class="green"><b>77</b> lines covered</span> and
+    <span class="red"><b>33</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -61,11 +61,11 @@
       
       <tr>
         <td><a href="#e6a965f5e4e1975596f8c547c0fb6cf497796d22" class="src_link" title="./app/controllers/movies_controller.rb">./app/controllers/movies_controller.rb</a></td>
-        <td class="red">23.68 %</td>
-        <td>64</td>
-        <td>38</td>
-        <td>9</td>
-        <td>29</td>
+        <td class="red">28.21 %</td>
+        <td>67</td>
+        <td>39</td>
+        <td>11</td>
+        <td>28</td>
       </tr>
       
       <tr>
@@ -188,9 +188,18 @@
       <tr>
         <td><a href="#10b8c4b9d374e053d9333e2cb5c91f226b07944a" class="src_link" title="./config/routes.rb">./config/routes.rb</a></td>
         <td class="green">100.0 %</td>
-        <td>60</td>
-        <td>3</td>
-        <td>3</td>
+        <td>63</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+      </tr>
+      
+      <tr>
+        <td><a href="#ea3b6c038c73b20805b8c1be60242eb55512768b" class="src_link" title="./spec/models/movie_spec.rb">./spec/models/movie_spec.rb</a></td>
+        <td class="green">100.0 %</td>
+        <td>17</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
       </tr>
       
@@ -275,7 +284,7 @@
     <tr>
       <td colspan="3">
         <h3>./app/controllers/movies_controller.rb</h3>
-        <h4><span class="red">23.68 %</span> covered</h4>
+        <h4><span class="red">28.21 %</span> covered</h4>
       </td>
     </tr>
     <tr>
@@ -1080,7 +1089,7 @@
     </tr>
   
     
-    <tr class="miss" data-hits="0">
+    <tr class="hit" data-hits="3">
       <td class="line_number">
         <pre>62</pre>
       </td>
@@ -1088,7 +1097,7 @@
         <pre>    @movies = Movie.find_in_tmdb(params[:search_terms])</pre>
       </td>
       <td class="hits">
-        0
+        3
       </td>
     </tr>
   
@@ -1109,6 +1118,45 @@
     <tr class="never" >
       <td class="line_number">
         <pre>64</pre>
+      </td>
+      <td>
+        <pre></pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>65</pre>
+      </td>
+      <td>
+        <pre>  def find_by_same_director</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>66</pre>
+      </td>
+      <td>
+        <pre>  end </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>67</pre>
       </td>
       <td>
         <pre>end</pre>
@@ -4148,7 +4196,7 @@
         <pre>18</pre>
       </td>
       <td>
-        <pre>  # Sample resource route with options:</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4156,15 +4204,15 @@
     </tr>
   
     
-    <tr class="never" >
+    <tr class="hit" data-hits="1">
       <td class="line_number">
         <pre>19</pre>
       </td>
       <td>
-        <pre>  #   resources :products do</pre>
+        <pre>  match ':controller/:action/:id'</pre>
       </td>
       <td class="hits">
-        
+        1
       </td>
     </tr>
   
@@ -4174,7 +4222,7 @@
         <pre>20</pre>
       </td>
       <td>
-        <pre>  #     member do</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4187,7 +4235,7 @@
         <pre>21</pre>
       </td>
       <td>
-        <pre>  #       get 'short'</pre>
+        <pre>  # Sample resource route with options:</pre>
       </td>
       <td class="hits">
         
@@ -4200,7 +4248,7 @@
         <pre>22</pre>
       </td>
       <td>
-        <pre>  #       post 'toggle'</pre>
+        <pre>  #   resources :products do</pre>
       </td>
       <td class="hits">
         
@@ -4213,7 +4261,7 @@
         <pre>23</pre>
       </td>
       <td>
-        <pre>  #     end</pre>
+        <pre>  #     member do</pre>
       </td>
       <td class="hits">
         
@@ -4226,7 +4274,7 @@
         <pre>24</pre>
       </td>
       <td>
-        <pre>  #</pre>
+        <pre>  #       get 'short'</pre>
       </td>
       <td class="hits">
         
@@ -4239,7 +4287,7 @@
         <pre>25</pre>
       </td>
       <td>
-        <pre>  #     collection do</pre>
+        <pre>  #       post 'toggle'</pre>
       </td>
       <td class="hits">
         
@@ -4252,7 +4300,7 @@
         <pre>26</pre>
       </td>
       <td>
-        <pre>  #       get 'sold'</pre>
+        <pre>  #     end</pre>
       </td>
       <td class="hits">
         
@@ -4265,7 +4313,7 @@
         <pre>27</pre>
       </td>
       <td>
-        <pre>  #     end</pre>
+        <pre>  #</pre>
       </td>
       <td class="hits">
         
@@ -4278,7 +4326,7 @@
         <pre>28</pre>
       </td>
       <td>
-        <pre>  #   end</pre>
+        <pre>  #     collection do</pre>
       </td>
       <td class="hits">
         
@@ -4291,7 +4339,7 @@
         <pre>29</pre>
       </td>
       <td>
-        <pre></pre>
+        <pre>  #       get 'sold'</pre>
       </td>
       <td class="hits">
         
@@ -4304,7 +4352,7 @@
         <pre>30</pre>
       </td>
       <td>
-        <pre>  # Sample resource route with sub-resources:</pre>
+        <pre>  #     end</pre>
       </td>
       <td class="hits">
         
@@ -4317,7 +4365,7 @@
         <pre>31</pre>
       </td>
       <td>
-        <pre>  #   resources :products do</pre>
+        <pre>  #   end</pre>
       </td>
       <td class="hits">
         
@@ -4330,7 +4378,7 @@
         <pre>32</pre>
       </td>
       <td>
-        <pre>  #     resources :comments, :sales</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4343,7 +4391,7 @@
         <pre>33</pre>
       </td>
       <td>
-        <pre>  #     resource :seller</pre>
+        <pre>  # Sample resource route with sub-resources:</pre>
       </td>
       <td class="hits">
         
@@ -4356,7 +4404,7 @@
         <pre>34</pre>
       </td>
       <td>
-        <pre>  #   end</pre>
+        <pre>  #   resources :products do</pre>
       </td>
       <td class="hits">
         
@@ -4369,7 +4417,7 @@
         <pre>35</pre>
       </td>
       <td>
-        <pre></pre>
+        <pre>  #     resources :comments, :sales</pre>
       </td>
       <td class="hits">
         
@@ -4382,7 +4430,7 @@
         <pre>36</pre>
       </td>
       <td>
-        <pre>  # Sample resource route with more complex sub-resources</pre>
+        <pre>  #     resource :seller</pre>
       </td>
       <td class="hits">
         
@@ -4395,7 +4443,7 @@
         <pre>37</pre>
       </td>
       <td>
-        <pre>  #   resources :products do</pre>
+        <pre>  #   end</pre>
       </td>
       <td class="hits">
         
@@ -4408,7 +4456,7 @@
         <pre>38</pre>
       </td>
       <td>
-        <pre>  #     resources :comments</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4421,7 +4469,7 @@
         <pre>39</pre>
       </td>
       <td>
-        <pre>  #     resources :sales do</pre>
+        <pre>  # Sample resource route with more complex sub-resources</pre>
       </td>
       <td class="hits">
         
@@ -4434,7 +4482,7 @@
         <pre>40</pre>
       </td>
       <td>
-        <pre>  #       get 'recent', :on =&gt; :collection</pre>
+        <pre>  #   resources :products do</pre>
       </td>
       <td class="hits">
         
@@ -4447,7 +4495,7 @@
         <pre>41</pre>
       </td>
       <td>
-        <pre>  #     end</pre>
+        <pre>  #     resources :comments</pre>
       </td>
       <td class="hits">
         
@@ -4460,7 +4508,7 @@
         <pre>42</pre>
       </td>
       <td>
-        <pre>  #   end</pre>
+        <pre>  #     resources :sales do</pre>
       </td>
       <td class="hits">
         
@@ -4473,7 +4521,7 @@
         <pre>43</pre>
       </td>
       <td>
-        <pre></pre>
+        <pre>  #       get 'recent', :on =&gt; :collection</pre>
       </td>
       <td class="hits">
         
@@ -4486,7 +4534,7 @@
         <pre>44</pre>
       </td>
       <td>
-        <pre>  # Sample resource route within a namespace:</pre>
+        <pre>  #     end</pre>
       </td>
       <td class="hits">
         
@@ -4499,7 +4547,7 @@
         <pre>45</pre>
       </td>
       <td>
-        <pre>  #   namespace :admin do</pre>
+        <pre>  #   end</pre>
       </td>
       <td class="hits">
         
@@ -4512,7 +4560,7 @@
         <pre>46</pre>
       </td>
       <td>
-        <pre>  #     # Directs /admin/products/* to Admin::ProductsController</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4525,7 +4573,7 @@
         <pre>47</pre>
       </td>
       <td>
-        <pre>  #     # (app/controllers/admin/products_controller.rb)</pre>
+        <pre>  # Sample resource route within a namespace:</pre>
       </td>
       <td class="hits">
         
@@ -4538,7 +4586,7 @@
         <pre>48</pre>
       </td>
       <td>
-        <pre>  #     resources :products</pre>
+        <pre>  #   namespace :admin do</pre>
       </td>
       <td class="hits">
         
@@ -4551,7 +4599,7 @@
         <pre>49</pre>
       </td>
       <td>
-        <pre>  #   end</pre>
+        <pre>  #     # Directs /admin/products/* to Admin::ProductsController</pre>
       </td>
       <td class="hits">
         
@@ -4564,7 +4612,7 @@
         <pre>50</pre>
       </td>
       <td>
-        <pre></pre>
+        <pre>  #     # (app/controllers/admin/products_controller.rb)</pre>
       </td>
       <td class="hits">
         
@@ -4577,7 +4625,7 @@
         <pre>51</pre>
       </td>
       <td>
-        <pre>  # You can have the root of your site routed with &quot;root&quot;</pre>
+        <pre>  #     resources :products</pre>
       </td>
       <td class="hits">
         
@@ -4590,7 +4638,7 @@
         <pre>52</pre>
       </td>
       <td>
-        <pre>  # just remember to delete public/index.html.</pre>
+        <pre>  #   end</pre>
       </td>
       <td class="hits">
         
@@ -4603,7 +4651,7 @@
         <pre>53</pre>
       </td>
       <td>
-        <pre>  # root :to =&gt; 'welcome#index'</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4616,7 +4664,7 @@
         <pre>54</pre>
       </td>
       <td>
-        <pre></pre>
+        <pre>  # You can have the root of your site routed with &quot;root&quot;</pre>
       </td>
       <td class="hits">
         
@@ -4629,7 +4677,7 @@
         <pre>55</pre>
       </td>
       <td>
-        <pre>  # See how all your routes lay out with &quot;rake routes&quot;</pre>
+        <pre>  # just remember to delete public/index.html.</pre>
       </td>
       <td class="hits">
         
@@ -4642,7 +4690,7 @@
         <pre>56</pre>
       </td>
       <td>
-        <pre></pre>
+        <pre>  # root :to =&gt; 'welcome#index'</pre>
       </td>
       <td class="hits">
         
@@ -4655,7 +4703,7 @@
         <pre>57</pre>
       </td>
       <td>
-        <pre>  # This is a legacy wild controller route that's not recommended for RESTful applications.</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4668,7 +4716,7 @@
         <pre>58</pre>
       </td>
       <td>
-        <pre>  # Note: This route will make all actions in every controller accessible via GET requests.</pre>
+        <pre>  # See how all your routes lay out with &quot;rake routes&quot;</pre>
       </td>
       <td class="hits">
         
@@ -4681,7 +4729,7 @@
         <pre>59</pre>
       </td>
       <td>
-        <pre>  # match ':controller(/:action(/:id(.:format)))'</pre>
+        <pre></pre>
       </td>
       <td class="hits">
         
@@ -4692,6 +4740,287 @@
     <tr class="never" >
       <td class="line_number">
         <pre>60</pre>
+      </td>
+      <td>
+        <pre>  # This is a legacy wild controller route that's not recommended for RESTful applications.</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>61</pre>
+      </td>
+      <td>
+        <pre>  # Note: This route will make all actions in every controller accessible via GET requests.</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>62</pre>
+      </td>
+      <td>
+        <pre>  # match ':controller(/:action(/:id(.:format)))'</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>63</pre>
+      </td>
+      <td>
+        <pre>end</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    </tbody>
+  </table>
+</div>
+      
+        <div class="source_table" id="ea3b6c038c73b20805b8c1be60242eb55512768b">
+  <table>
+    <thead>
+    <tr>
+      <td colspan="3">
+        <h3>./spec/models/movie_spec.rb</h3>
+        <h4><span class="green">100.0 %</span> covered</h4>
+      </td>
+    </tr>
+    <tr>
+      <th>#</th>
+      <th></th>
+      <th>Hits</th>
+    </tr>
+    </thead>
+    <tbody>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>1</pre>
+      </td>
+      <td>
+        <pre># spec/models/movie_spec.rb:</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>2</pre>
+      </td>
+      <td>
+        <pre>require 'spec_helper'</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>3</pre>
+      </td>
+      <td>
+        <pre></pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>4</pre>
+      </td>
+      <td>
+        <pre>describe Movie do</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>5</pre>
+      </td>
+      <td>
+        <pre>    describe 'search Tmdb by keyword' do</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>6</pre>
+      </td>
+      <td>
+        <pre>        it 'should call Tmdb with title keywords given valid API key' do</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>7</pre>
+      </td>
+      <td>
+        <pre>            TmdbMovie.should_receive(:find).with(hash_including :title =&gt; 'Inception')</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>8</pre>
+      </td>
+      <td>
+        <pre>            Movie.find_in_tmdb('Inception')</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>9</pre>
+      </td>
+      <td>
+        <pre>        end </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>10</pre>
+      </td>
+      <td>
+        <pre></pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>11</pre>
+      </td>
+      <td>
+        <pre>        it 'should raise an InvalidKeyError with no API key' do</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>12</pre>
+      </td>
+      <td>
+        <pre>            Movie.stub(:api_key).and_return('')</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="2">
+      <td class="line_number">
+        <pre>13</pre>
+      </td>
+      <td>
+        <pre>            lambda { Movie.find_in_tmdb('Inception') }.</pre>
+      </td>
+      <td class="hits">
+        2
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>14</pre>
+      </td>
+      <td>
+        <pre>            should raise_error(Movie::InvalidKeyError)</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>15</pre>
+      </td>
+      <td>
+        <pre>        end </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>16</pre>
+      </td>
+      <td>
+        <pre>    end </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>17</pre>
       </td>
       <td>
         <pre>end</pre>
