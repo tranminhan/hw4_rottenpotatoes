@@ -15,9 +15,9 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the edit page for (.*)$/
+    when /^the edit page for "(.*)"$/
       edit_movie_path(Movie.find_by_title($1))
-    when /^the details page for (.*)$/
+    when /^the details page for "(.*)"$/
       movie_path(Movie.find_by_title($1))
 
     # Add more mappings here.
