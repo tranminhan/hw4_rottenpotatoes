@@ -32,6 +32,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'ruby-tmdb'
 
 # Use unicorn as the web server
 # gem 'unicorn'
