@@ -51,6 +51,13 @@ describe MoviesController do
         response.should redirect_to movies_path
     end 
 
+    it 'should has flash notice' do
+        Movie.stub(:find_by_id).with("1").and_return(
+            mock('Movie', :id => 1, :director => "  ", :title => 'test'))
+        post :find_by_same_director, { :id => "1" }
+       flash[:notice].should =~ /'test' has no director info/i
+    end 
+
     it 'should call the model method that find movies by director' do 
         Movie.stub(:find_by_id).with("1").and_return(
             mock('Movie', :id => 1, :director => 'test'))
