@@ -16,7 +16,7 @@ Rottenpotatoes::Application.routes.draw do
   
   post '/movies/search_tmdb'
 
-  match ':controller/:action/:id'
+  match '/movies/similar_director/:id' => 'movies#find_by_same_director', :as => :similar_director
 
   # Sample resource route with options:
   #   resources :products do

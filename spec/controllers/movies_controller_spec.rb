@@ -34,5 +34,7 @@ describe MoviesController do
         Movie.should_receive(:find_by_same_director).with("1")
         post :find_by_same_director, { :id => "1" }
     end 
+
+    
   end 
 end
