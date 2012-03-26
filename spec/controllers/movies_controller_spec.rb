@@ -61,16 +61,28 @@ describe MoviesController do
         response.should render_template('index')
     end 
     
-    it 'should make results available to the template' do 
-        fake_results = [mock('Movie', :id => 1, :director => 'test')]
-        Movie.stub(:find_by_id).with("1").and_return(
-            mock('Movie', :id => 1, :director => 'test'))
-        Movie.should_receive(:directed_by_director).with("test").and_return(
-            fake_results)
-        post :find_by_same_director, { :id => "1" }
-        assigns(:movies).should == fake_results
+    describe 'after valid find' do
+        before :each do 
+            @fake_results = [mock('Movie', :id => 1, :director => 'test')]
+            Movie.stub(:find_by_id).with("1").and_return(
+                mock('Movie', :id => 1, :director => 'test'))
+            Movie.stub(:directed_by_director).with("test").and_return(
+                @fake_results)
+            post :find_by_same_director, { :id => "1" }
+        end 
+    
+        it 'should make results available to the template' do 
+            assigns(:movies).should == @fake_results
+        end 
+
+        it 'should make all_ratings available to the template when rendering with non-nil director' do 
+            assigns(:all_ratings).should == Movie.all_ratings
+        end 
+
+        it 'should make selected_rating non-nil to the template' do 
+            assigns(:selected_ratings).should_not nil
+            assigns(:selected_ratings).should be_kind_of Hash
+        end 
     end 
-
   end 
-
 end
