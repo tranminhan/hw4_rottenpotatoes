@@ -35,6 +35,18 @@ describe MoviesController do
         post :find_by_same_director, { :id => "1" }
     end 
 
-    
+    it 'should select index templte for rendering' do
+        Movie.stub(:find_by_same_director).with("1")
+        post :find_by_same_director, { :id => "1" }
+        response.should render_template('index')
+    end 
+
+    it 'should make search results available to that templte' do 
+        @fake_results = [mock('Movie')]
+        Movie.stub(:find_by_same_director).with("1").and_return(@fake_results)
+        post :find_by_same_director, { :id => "1" }
+        assigns(:movies).should == @fake_results
+    end 
   end 
+
 end

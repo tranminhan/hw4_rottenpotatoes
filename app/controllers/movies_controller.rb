@@ -62,7 +62,8 @@ class MoviesController < ApplicationController
     @movies = Movie.find_in_tmdb(params[:search_terms])
   end
 
-  def find_by_same_director
+  def find_by_same_director 
     @movies = Movie.find_by_same_director(params[:id])
+    render 'index'
   end 
 end

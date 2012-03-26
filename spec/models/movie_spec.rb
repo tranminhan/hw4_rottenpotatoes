@@ -14,4 +14,16 @@ describe Movie do
             should raise_error(Movie::InvalidKeyError)
         end 
     end 
+
+    describe 'find by similar director' do 
+        it 'should call the movie find director method' do 
+            movie = Movie.create( { :title => 'test' } )
+            Movie.should_receive(:find_by_director).exactly(1).times
+            Movie.find_by_same_director(movie.id)
+        end 
+
+        it 'should return empty array for id = -1' do 
+            Movie.find_by_same_director(-1).should == []
+        end 
+    end 
 end
