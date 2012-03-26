@@ -21,20 +21,20 @@
       <img src="./assets/0.4.5/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-26T01:55:20+07:00">2012-03-26T01:55:20+07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-26T08:38:07+07:00">2012-03-26T08:38:07+07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     All Files
-    (<span class="red">70.0%</span>)
+    (<span class="red">70.27%</span>)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>17</b> files in total.
-    <b>110</b> relevant lines. 
-    <span class="green"><b>77</b> lines covered</span> and
+    <b>111</b> relevant lines. 
+    <span class="green"><b>78</b> lines covered</span> and
     <span class="red"><b>33</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -61,10 +61,10 @@
       
       <tr>
         <td><a href="#e6a965f5e4e1975596f8c547c0fb6cf497796d22" class="src_link" title="./app/controllers/movies_controller.rb">./app/controllers/movies_controller.rb</a></td>
-        <td class="red">28.21 %</td>
-        <td>67</td>
-        <td>39</td>
-        <td>11</td>
+        <td class="red">30.0 %</td>
+        <td>68</td>
+        <td>40</td>
+        <td>12</td>
         <td>28</td>
       </tr>
       
@@ -284,7 +284,7 @@
     <tr>
       <td colspan="3">
         <h3>./app/controllers/movies_controller.rb</h3>
-        <h4><span class="red">28.21 %</span> covered</h4>
+        <h4><span class="red">30.0 %</span> covered</h4>
       </td>
     </tr>
     <tr>
@@ -1141,9 +1141,22 @@
     </tr>
   
     
-    <tr class="never" >
+    <tr class="hit" data-hits="1">
       <td class="line_number">
         <pre>66</pre>
+      </td>
+      <td>
+        <pre>    @movies = Movie.find_by_same_director(params[:id])</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>67</pre>
       </td>
       <td>
         <pre>  end </pre>
@@ -1156,7 +1169,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>67</pre>
+        <pre>68</pre>
       </td>
       <td>
         <pre>end</pre>

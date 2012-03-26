@@ -31,7 +31,8 @@ describe MoviesController do
   describe 'find with same director' do
 
     it 'should call the model method that find movies with same director' do 
-        post :find_by_same_director, { :id => 1 }
+        Movie.should_receive(:find_by_same_director).with("1")
+        post :find_by_same_director, { :id => "1" }
     end 
   end 
 end

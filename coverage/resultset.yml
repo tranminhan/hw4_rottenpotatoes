@@ -249,6 +249,7 @@ RSpec:
     - 
     - 
     - 1
+    - 1
     - 
     - 
     C:/Sites/hw4_rottenpotatoes/app/models/movie.rb:
@@ -361,4 +362,4 @@ RSpec:
     - 
     - 
     - 
-  :created_at: 2012-03-26 01:55:19.506845000 +07:00
+  :created_at: 2012-03-26 08:38:06.748132000 +07:00
