@@ -28,7 +28,7 @@ describe Movie do
 
         it 'should return an non-empty array with valid input' do
             movie = Movie.create( { :title => 'test' } )            
-            Movie.find_by_same_director(movie.id).should be_kind_of Array
+            Movie.find_by_same_director(movie.id).should be_kind_of Array 
         end 
     end 
 end

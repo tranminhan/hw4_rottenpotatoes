@@ -21,21 +21,21 @@
       <img src="./assets/0.4.5/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-26T19:35:03+07:00">2012-03-26T19:35:03+07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-26T23:45:57+07:00">2012-03-26T23:45:57+07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     All Files
-    (<span class="red">75.19%</span>)
+    (<span class="red">63.79%</span>)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>17</b> files in total.
-    <b>129</b> relevant lines. 
-    <span class="green"><b>97</b> lines covered</span> and
-    <span class="red"><b>32</b> lines missed </span>
+    <b>16</b> files in total.
+    <b>116</b> relevant lines. 
+    <span class="green"><b>74</b> lines covered</span> and
+    <span class="red"><b>42</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -61,10 +61,10 @@
       
       <tr>
         <td><a href="#bde39f5093eaa07c6612094279db8d339c754349" class="src_link" title="./app/controllers/movies_controller.rb">./app/controllers/movies_controller.rb</a></td>
-        <td class="red">34.88 %</td>
-        <td>71</td>
-        <td>43</td>
-        <td>15</td>
+        <td class="red">42.86 %</td>
+        <td>82</td>
+        <td>49</td>
+        <td>21</td>
         <td>28</td>
       </tr>
       
@@ -88,11 +88,11 @@
       
       <tr>
         <td><a href="#e235e004cea1ba8c908a1a4b9736dd4032d5b4f4" class="src_link" title="./app/models/movie.rb">./app/models/movie.rb</a></td>
-        <td class="yellow">85.0 %</td>
+        <td class="red">35.0 %</td>
         <td>36</td>
         <td>20</td>
-        <td>17</td>
-        <td>3</td>
+        <td>7</td>
+        <td>13</td>
       </tr>
       
       <tr>
@@ -194,15 +194,6 @@
         <td>0</td>
       </tr>
       
-      <tr>
-        <td><a href="#97626893a2307f5204c127d5274341b9bb9980ee" class="src_link" title="./spec/models/movie_spec.rb">./spec/models/movie_spec.rb</a></td>
-        <td class="green">100.0 %</td>
-        <td>34</td>
-        <td>19</td>
-        <td>19</td>
-        <td>0</td>
-      </tr>
-      
     </tbody>
   </table>
 </div>
@@ -284,7 +275,7 @@
     <tr>
       <td colspan="3">
         <h3>./app/controllers/movies_controller.rb</h3>
-        <h4><span class="red">34.88 %</span> covered</h4>
+        <h4><span class="red">42.86 %</span> covered</h4>
       </td>
     </tr>
     <tr>
@@ -1141,54 +1132,54 @@
     </tr>
   
     
-    <tr class="hit" data-hits="4">
+    <tr class="hit" data-hits="5">
       <td class="line_number">
         <pre>66</pre>
       </td>
       <td>
-        <pre>    @all_ratings = Movie.all_ratings</pre>
+        <pre>    movie = Movie.find_by_id(params[:id])</pre>
       </td>
       <td class="hits">
-        4
+        5
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="4">
+    <tr class="hit" data-hits="5">
       <td class="line_number">
         <pre>67</pre>
       </td>
       <td>
-        <pre>    @selected_ratings = {}</pre>
+        <pre>    if movie.director.nil?</pre>
       </td>
       <td class="hits">
-        4
+        5
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="4">
+    <tr class="hit" data-hits="1">
       <td class="line_number">
         <pre>68</pre>
       </td>
       <td>
-        <pre>    @movies = Movie.find_by_same_director(params[:id])</pre>
+        <pre>      flash[:notice] = &quot;#{movie.title} has no director info&quot;</pre>
       </td>
       <td class="hits">
-        4
+        1
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="4">
+    <tr class="hit" data-hits="1">
       <td class="line_number">
         <pre>69</pre>
       </td>
       <td>
-        <pre>    render 'index'</pre>
+        <pre>      redirect_to movies_path and return  </pre>
       </td>
       <td class="hits">
-        4
+        1
       </td>
     </tr>
   
@@ -1196,6 +1187,136 @@
     <tr class="never" >
       <td class="line_number">
         <pre>70</pre>
+      </td>
+      <td>
+        <pre>    else </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="4">
+      <td class="line_number">
+        <pre>71</pre>
+      </td>
+      <td>
+        <pre>      @all_ratings = Movie.all_ratings</pre>
+      </td>
+      <td class="hits">
+        4
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="4">
+      <td class="line_number">
+        <pre>72</pre>
+      </td>
+      <td>
+        <pre>      @selected_ratings = {}</pre>
+      </td>
+      <td class="hits">
+        4
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="4">
+      <td class="line_number">
+        <pre>73</pre>
+      </td>
+      <td>
+        <pre>      @movies = Movie.directed_by_director(movie.director)</pre>
+      </td>
+      <td class="hits">
+        4
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="4">
+      <td class="line_number">
+        <pre>74</pre>
+      </td>
+      <td>
+        <pre>      if @movies.nil? or @movies.empty? </pre>
+      </td>
+      <td class="hits">
+        4
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>75</pre>
+      </td>
+      <td>
+        <pre>        redirect_to movies_path and return  </pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>76</pre>
+      </td>
+      <td>
+        <pre>      else </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="3">
+      <td class="line_number">
+        <pre>77</pre>
+      </td>
+      <td>
+        <pre>        render 'index' and return </pre>
+      </td>
+      <td class="hits">
+        3
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>78</pre>
+      </td>
+      <td>
+        <pre>      end </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>79</pre>
+      </td>
+      <td>
+        <pre>    end     </pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>80</pre>
       </td>
       <td>
         <pre>  end </pre>
@@ -1208,7 +1329,20 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>71</pre>
+        <pre>81</pre>
+      </td>
+      <td>
+        <pre></pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>82</pre>
       </td>
       <td>
         <pre>end</pre>
@@ -1374,7 +1508,7 @@
     <tr>
       <td colspan="3">
         <h3>./app/models/movie.rb</h3>
-        <h4><span class="yellow">85.0 %</span> covered</h4>
+        <h4><span class="red">35.0 %</span> covered</h4>
       </td>
     </tr>
     <tr>
@@ -1451,7 +1585,7 @@
     </tr>
   
     
-    <tr class="hit" data-hits="1">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>6</pre>
       </td>
@@ -1459,7 +1593,7 @@
         <pre>        'cc4b67c52acb514bdf4931f7cedfd12b' # replace with YOUR Tmdb key</pre>
       </td>
       <td class="hits">
-        1
+        0
       </td>
     </tr>
   
@@ -1503,7 +1637,7 @@
     </tr>
   
     
-    <tr class="hit" data-hits="5">
+    <tr class="hit" data-hits="4">
       <td class="line_number">
         <pre>10</pre>
       </td>
@@ -1511,7 +1645,7 @@
         <pre>        %w(G PG PG-13 NC-17 R)</pre>
       </td>
       <td class="hits">
-        5
+        4
       </td>
     </tr>
   
@@ -1555,7 +1689,7 @@
     </tr>
   
     
-    <tr class="hit" data-hits="2">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>14</pre>
       </td>
@@ -1563,12 +1697,12 @@
         <pre>        Tmdb.api_key = self.api_key</pre>
       </td>
       <td class="hits">
-        2
+        0
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="2">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>15</pre>
       </td>
@@ -1576,12 +1710,12 @@
         <pre>        begin </pre>
       </td>
       <td class="hits">
-        2
+        0
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="2">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>16</pre>
       </td>
@@ -1589,12 +1723,12 @@
         <pre>            TmdbMovie.find(:title =&gt; string)        </pre>
       </td>
       <td class="hits">
-        2
+        0
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="1">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>17</pre>
       </td>
@@ -1602,12 +1736,12 @@
         <pre>        rescue ArgumentError =&gt; tmdb_error</pre>
       </td>
       <td class="hits">
-        1
+        0
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="1">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>18</pre>
       </td>
@@ -1615,7 +1749,7 @@
         <pre>            raise Movie::InvalidKeyError, tmdb_error.message </pre>
       </td>
       <td class="hits">
-        1
+        0
       </td>
     </tr>
   
@@ -1750,7 +1884,7 @@
     </tr>
   
     
-    <tr class="hit" data-hits="4">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>29</pre>
       </td>
@@ -1758,12 +1892,12 @@
         <pre>        movie = Movie.find_by_id(id)</pre>
       </td>
       <td class="hits">
-        4
+        0
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="4">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>30</pre>
       </td>
@@ -1771,12 +1905,12 @@
         <pre>        if movie.nil?</pre>
       </td>
       <td class="hits">
-        4
+        0
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="2">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>31</pre>
       </td>
@@ -1784,7 +1918,7 @@
         <pre>            []  </pre>
       </td>
       <td class="hits">
-        2
+        0
       </td>
     </tr>
   
@@ -1802,7 +1936,7 @@
     </tr>
   
     
-    <tr class="hit" data-hits="2">
+    <tr class="miss" data-hits="0">
       <td class="line_number">
         <pre>33</pre>
       </td>
@@ -1810,7 +1944,7 @@
         <pre>            Movie.find_all_by_director(movie.director)</pre>
       </td>
       <td class="hits">
-        2
+        0
       </td>
     </tr>
   
@@ -4948,469 +5082,6 @@
     <tr class="never" >
       <td class="line_number">
         <pre>63</pre>
-      </td>
-      <td>
-        <pre>end</pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    </tbody>
-  </table>
-</div>
-      
-        <div class="source_table" id="97626893a2307f5204c127d5274341b9bb9980ee">
-  <table>
-    <thead>
-    <tr>
-      <td colspan="3">
-        <h3>./spec/models/movie_spec.rb</h3>
-        <h4><span class="green">100.0 %</span> covered</h4>
-      </td>
-    </tr>
-    <tr>
-      <th>#</th>
-      <th></th>
-      <th>Hits</th>
-    </tr>
-    </thead>
-    <tbody>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>1</pre>
-      </td>
-      <td>
-        <pre># spec/models/movie_spec.rb:</pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>2</pre>
-      </td>
-      <td>
-        <pre>require 'spec_helper'</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>3</pre>
-      </td>
-      <td>
-        <pre></pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>4</pre>
-      </td>
-      <td>
-        <pre>describe Movie do</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>5</pre>
-      </td>
-      <td>
-        <pre>    describe 'search Tmdb by keyword' do</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>6</pre>
-      </td>
-      <td>
-        <pre>        it 'should call Tmdb with title keywords given valid API key' do</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>7</pre>
-      </td>
-      <td>
-        <pre>            TmdbMovie.should_receive(:find).with(hash_including :title =&gt; 'Inception')</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>8</pre>
-      </td>
-      <td>
-        <pre>            Movie.find_in_tmdb('Inception')</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>9</pre>
-      </td>
-      <td>
-        <pre>        end </pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>10</pre>
-      </td>
-      <td>
-        <pre></pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>11</pre>
-      </td>
-      <td>
-        <pre>        it 'should raise an InvalidKeyError with no API key' do</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>12</pre>
-      </td>
-      <td>
-        <pre>            Movie.stub(:api_key).and_return('')</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="2">
-      <td class="line_number">
-        <pre>13</pre>
-      </td>
-      <td>
-        <pre>            lambda { Movie.find_in_tmdb('Inception') }.</pre>
-      </td>
-      <td class="hits">
-        2
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>14</pre>
-      </td>
-      <td>
-        <pre>            should raise_error(Movie::InvalidKeyError)</pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>15</pre>
-      </td>
-      <td>
-        <pre>        end </pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>16</pre>
-      </td>
-      <td>
-        <pre>    end </pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>17</pre>
-      </td>
-      <td>
-        <pre></pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>18</pre>
-      </td>
-      <td>
-        <pre>    describe 'find by similar director' do </pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>19</pre>
-      </td>
-      <td>
-        <pre>        it 'should call the movie find director method' do </pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>20</pre>
-      </td>
-      <td>
-        <pre>            movie = Movie.create( { :title =&gt; 'test' } )</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>21</pre>
-      </td>
-      <td>
-        <pre>            Movie.should_receive(:find_all_by_director).exactly(1).times</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>22</pre>
-      </td>
-      <td>
-        <pre>            Movie.find_by_same_director(movie.id)</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>23</pre>
-      </td>
-      <td>
-        <pre>        end </pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>24</pre>
-      </td>
-      <td>
-        <pre></pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>25</pre>
-      </td>
-      <td>
-        <pre>        it 'should return empty array for id = -1' do </pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>26</pre>
-      </td>
-      <td>
-        <pre>            Movie.find_by_same_director(-1).should == Array.new</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>27</pre>
-      </td>
-      <td>
-        <pre>        end </pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>28</pre>
-      </td>
-      <td>
-        <pre></pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>29</pre>
-      </td>
-      <td>
-        <pre>        it 'should return an non-empty array with valid input' do</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>30</pre>
-      </td>
-      <td>
-        <pre>            movie = Movie.create( { :title =&gt; 'test' } )            </pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>31</pre>
-      </td>
-      <td>
-        <pre>            Movie.find_by_same_director(movie.id).should be_kind_of Array</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>32</pre>
-      </td>
-      <td>
-        <pre>        end </pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>33</pre>
-      </td>
-      <td>
-        <pre>    end </pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>34</pre>
       </td>
       <td>
         <pre>end</pre>

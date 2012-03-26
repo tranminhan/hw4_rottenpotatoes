@@ -30,29 +30,47 @@ describe MoviesController do
 
   describe 'find with same director' do
 
-    it 'should call the model method that find movies with same director' do 
-        Movie.should_receive(:find_by_same_director).with("1")
-        post :find_by_same_director, { :id => "1" }
+    it 'should call the model method that find movie with id' do 
+        Movie.should_receive(:find_by_id).with("1").and_return(
+            mock('Movie', :id => 1, :director => 'test'))
+        Movie.stub(:directed_by_director).and_return([])
+        post :find_by_same_director, { :id => "1" } 
     end 
 
-    it 'should select index templte for rendering' do
-        Movie.stub(:find_by_same_director).with("1")
+    it 'should redirect to home page if the movie has no director info' do
+        Movie.stub(:find_by_id).with("1").and_return(
+            mock('Movie', :id => 1, :director => nil, :title => 'test'))
+        post :find_by_same_director, { :id => "1" }
+        response.should redirect_to(:controller => 'movies', :action => 'index')
+    end 
+
+    it 'should call the model method that find movies by director' do 
+        Movie.stub(:find_by_id).with("1").and_return(
+            mock('Movie', :id => 1, :director => 'test'))
+        Movie.should_receive(:directed_by_director).with("test").and_return(
+            [mock('Movie', :id => 1, :director => 'test')])
+        post :find_by_same_director, { :id => "1" }
+    end     
+
+    it 'should select index template for rendering with non-nil director info' do
+        Movie.stub(:find_by_id).with("1").and_return(
+            mock('Movie', :id => 1, :director => 'test'))
+        Movie.should_receive(:directed_by_director).with("test").and_return(
+            [mock('Movie', :id => 1, :director => 'test')])
         post :find_by_same_director, { :id => "1" }
         response.should render_template('index')
     end 
-
-    it 'should make search results available to that templte' do 
-        @fake_results = [mock('Movie')]
-        Movie.stub(:find_by_same_director).with("1").and_return(@fake_results)
+    
+    it 'should make results available to the template' do 
+        fake_results = [mock('Movie', :id => 1, :director => 'test')]
+        Movie.stub(:find_by_id).with("1").and_return(
+            mock('Movie', :id => 1, :director => 'test'))
+        Movie.should_receive(:directed_by_director).with("test").and_return(
+            fake_results)
         post :find_by_same_director, { :id => "1" }
-        assigns(:movies).should == @fake_results
+        assigns(:movies).should == fake_results
     end 
 
-    it 'should also load ratings properly to render that template' do 
-        post :find_by_same_director, { :id => "1" }
-        assigns(:all_ratings).should == Movie.all_ratings
-        assigns(:selected_ratings).should == {}
-    end 
   end 
 
 end
