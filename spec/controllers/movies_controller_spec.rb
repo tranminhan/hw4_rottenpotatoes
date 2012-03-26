@@ -33,7 +33,7 @@ describe MoviesController do
     it 'should call the model method that find movie with id' do 
         Movie.should_receive(:find_by_id).with("1").and_return(
             mock('Movie', :id => 1, :director => 'test'))
-        Movie.stub(:directed_by_director).and_return([])
+        Movie.stub(:directed_by).and_return([])
         post :find_by_same_director, { :id => "1" } 
     end 
 
@@ -41,34 +41,36 @@ describe MoviesController do
         Movie.stub(:find_by_id).with("1").and_return(
             mock('Movie', :id => 1, :director => nil, :title => 'test'))
         post :find_by_same_director, { :id => "1" }
-        response.should redirect_to(:controller => 'movies', :action => 'index')
+        response.should redirect_to movies_path
+    end 
+
+    it 'should redirect to home page if the movie has blank director info' do
+        Movie.stub(:find_by_id).with("1").and_return(
+            mock('Movie', :id => 1, :director => "  ", :title => 'test'))
+        post :find_by_same_director, { :id => "1" }
+        response.should redirect_to movies_path
     end 
 
     it 'should call the model method that find movies by director' do 
         Movie.stub(:find_by_id).with("1").and_return(
             mock('Movie', :id => 1, :director => 'test'))
-        Movie.should_receive(:directed_by_director).with("test").and_return(
+        Movie.should_receive(:directed_by).with("test").and_return(
             [mock('Movie', :id => 1, :director => 'test')])
         post :find_by_same_director, { :id => "1" }
     end     
-
-    it 'should select index template for rendering with non-nil director info' do
-        Movie.stub(:find_by_id).with("1").and_return(
-            mock('Movie', :id => 1, :director => 'test'))
-        Movie.should_receive(:directed_by_director).with("test").and_return(
-            [mock('Movie', :id => 1, :director => 'test')])
-        post :find_by_same_director, { :id => "1" }
-        response.should render_template('index')
-    end 
     
     describe 'after valid find' do
         before :each do 
             @fake_results = [mock('Movie', :id => 1, :director => 'test')]
             Movie.stub(:find_by_id).with("1").and_return(
                 mock('Movie', :id => 1, :director => 'test'))
-            Movie.stub(:directed_by_director).with("test").and_return(
+            Movie.stub(:directed_by).with("test").and_return(
                 @fake_results)
             post :find_by_same_director, { :id => "1" }
+        end 
+
+        it 'should select index template for rendering with non-nil director info' do
+            response.should render_template('index')
         end 
     
         it 'should make results available to the template' do 

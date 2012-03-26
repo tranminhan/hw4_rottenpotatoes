@@ -64,18 +64,14 @@ class MoviesController < ApplicationController
 
   def find_by_same_director 
     movie = Movie.find_by_id(params[:id])
-    if movie.director.nil?
+    if movie.director.blank?
       flash[:notice] = "#{movie.title} has no director info"
       redirect_to movies_path and return  
     else 
       @all_ratings = Movie.all_ratings
       @selected_ratings = {}
-      @movies = Movie.directed_by_director(movie.director)
-      if @movies.nil? or @movies.empty? 
-        redirect_to movies_path and return  
-      else 
-        render 'index' and return 
-      end 
+      @movies = Movie.directed_by(movie.director)
+      render 'index' and return 
     end     
   end 
 
