@@ -25,12 +25,7 @@ class Movie < ActiveRecord::Base
         end  
     end
 
-    def self.find_by_same_director(id)
-        movie = Movie.find_by_id(id)
-        if movie.nil?
-            []  
-        else 
-            Movie.find_all_by_director(movie.director)
-        end         
+    def self.directed_by(director)
+        Movie.find_all_by_director(director)
     end 
 end

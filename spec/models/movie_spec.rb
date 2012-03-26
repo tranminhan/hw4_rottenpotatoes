@@ -15,20 +15,24 @@ describe Movie do
         end 
     end 
 
-    describe 'find by similar director' do 
+    describe 'find by director' do 
         it 'should call the movie find director method' do 
-            movie = Movie.create( { :title => 'test' } )
-            Movie.should_receive(:find_all_by_director).exactly(1).times
-            Movie.find_by_same_director(movie.id)
+            director = 'director'
+            Movie.create( { :title => 'test', :director => director } )            
+            Movie.should_receive(:find_all_by_director).with(director).exactly(1).times
+            Movie.directed_by(director)
         end 
 
-        it 'should return empty array for id = -1' do 
-            Movie.find_by_same_director(-1).should == Array.new
+        it 'should return empty array for director = INVALID' do 
+            Movie.directed_by(-1).should == Array.new
         end 
 
         it 'should return an non-empty array with valid input' do
-            movie = Movie.create( { :title => 'test' } )            
-            Movie.find_by_same_director(movie.id).should be_kind_of Array 
+            movies = [  Movie.create( { :title => 'test', 
+                                    :director => 'test' } ) ,
+                        Movie.create( { :title => 'test', 
+                                    :director => 'test' } )  ]          
+            Movie.directed_by('test').should == movies
         end 
     end 
 end
