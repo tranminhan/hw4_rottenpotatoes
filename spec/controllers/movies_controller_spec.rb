@@ -47,6 +47,12 @@ describe MoviesController do
         post :find_by_same_director, { :id => "1" }
         assigns(:movies).should == @fake_results
     end 
+
+    it 'should also load ratings properly to render that template' do 
+        post :find_by_same_director, { :id => "1" }
+        assigns(:all_ratings).should == Movie.all_ratings
+        assigns(:selected_ratings).should == {}
+    end 
   end 
 
 end

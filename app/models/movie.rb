@@ -30,7 +30,7 @@ class Movie < ActiveRecord::Base
         if movie.nil?
             []  
         else 
-            Movie.find_by_director(movie.director)
+            Movie.find_all_by_director(movie.director)
         end         
     end 
 end

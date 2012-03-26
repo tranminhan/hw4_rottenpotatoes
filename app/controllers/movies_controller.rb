@@ -63,6 +63,8 @@ class MoviesController < ApplicationController
   end
 
   def find_by_same_director 
+    @all_ratings = Movie.all_ratings
+    @selected_ratings = {}
     @movies = Movie.find_by_same_director(params[:id])
     render 'index'
   end 
