@@ -64,6 +64,33 @@ describe MoviesController do
     end 
   end 
 
+  describe 'index' do 
+    it 'should call movie find all by ratings' do 
+      Movie.should_receive(:find_all_by_rating)
+      get :index 
+    end 
+
+    describe 'do index' do 
+      before :each do 
+        Movie.stub(:find_all_by_rating)
+      end 
+
+      it 'should hight light title when sort by title' do       
+        get :index, {:sort => 'title'}
+        assigns(:title_header).should == 'hilite'
+      end 
+
+      it 'should hight light release_date when sort by release_date' do 
+        get :index, {:sort => 'release_date'}
+        assigns(:date_header).should == 'hilite'
+      end 
+    end 
+
+
+
+
+  end 
+
   describe 'edit movie' do 
     it 'should call the find movie method' do 
       movie = mock('movie', :title => 'a title')
