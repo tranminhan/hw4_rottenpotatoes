@@ -2,6 +2,42 @@ require 'spec_helper'
 
 describe MoviesController do
 
+  describe 'show a movie' do 
+    it 'should call the movie method to load from db' do 
+      Movie.should_receive(:find).with("1").and_return(
+        mock(:id => 'test', :title => 'test'))
+      get :show, { :id => "1" }
+    end
+
+    describe 'valid execution' do 
+      before :each do 
+        @movie = Movie.stub(:find).with("1").and_return(
+          mock(:id => 'test', :title => 'test'))
+        get :show, { :id => "1" }
+      end 
+
+      it 'should use show template for rendering' do             
+        response.should render_template 'show'
+      end 
+      
+      it 'should make a movie object available to the template' do 
+        assigns(:movie) == @movie
+      end 
+    end 
+  end 
+
+  describe 'show input page' do 
+    it 'should not call movie find method' do 
+      Movie.should_not_receive(:find) 
+      get :new 
+    end 
+
+    it 'should select new template for rendering' do 
+      get :new 
+      response.should render_template 'new'
+    end 
+  end 
+
   describe 'searching TMDb' do
     before :each do 
         @fake_results = [mock('Movie'), mock('Movie')]
@@ -29,7 +65,6 @@ describe MoviesController do
   end
 
   describe 'find with same director' do
-
     it 'should call the model method that find movie with id' do 
         Movie.should_receive(:find_by_id).with("1").and_return(
             mock('Movie', :id => 1, :director => 'test'))
