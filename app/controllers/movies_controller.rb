@@ -63,13 +63,15 @@ class MoviesController < ApplicationController
   end
 
   def find_by_same_director 
+    @all_ratings = Movie.all_ratings
+    @selected_ratings = session[:ratings] || {}
+
     movie = Movie.find_by_id(params[:id])
     if movie.director.blank?
       flash[:notice] = "'#{movie.title}' has no director info"
-      redirect_to movies_path and return  
+      redirect_to movies_path, {
+        :sort => session[:sort], :ratings => session[:ratings] } and return
     else 
-      @all_ratings = Movie.all_ratings
-      @selected_ratings = {}
       @movies = Movie.directed_by(movie.director)
       render 'index' and return 
     end     
