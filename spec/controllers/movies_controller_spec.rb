@@ -34,7 +34,57 @@ describe MoviesController do
 
     it 'should select new template for rendering' do 
       get :new 
-      response.should render_template 'new'
+      response.should render_template('new')
+    end 
+  end 
+
+  describe 'create new movie' do 
+    it 'should call movie create method' do       
+      mock = {'title' => 'a movie'}
+      movie = mock('movie', :title => 'a movie')
+      Movie.should_receive(:create!).with(mock).and_return(movie)
+      post :create, {:movie => mock}
+    end 
+
+    describe 'after create successfully' do 
+      before :each do 
+        mock = {'title' => 'a movie'}
+        @movie = mock('movie', :title => 'a movie')
+        Movie.stub(:create!).with(mock).and_return(@movie)
+        post :create, {:movie => mock}
+      end 
+
+      it 'should redirect to index page when success' do 
+        response.should redirect_to movies_path 
+      end 
+
+      it 'should display message # was successfully created' do 
+        flash[:notice].should == "#{@movie.title} was successfully created."
+      end 
+    end 
+  end 
+
+  describe 'edit movie' do 
+    it 'should call the find movie method' do 
+      movie = mock('movie', :title => 'a title')
+      Movie.should_receive(:find).with("1").and_return(movie)
+      get :edit, {:id => 1}
+    end 
+
+    describe 'load edit view successfully' do 
+      before :each do 
+        @movie = mock('movie', :title => 'a title')
+        Movie.stub(:find).with("1").and_return(@movie)
+        get :edit, {:id => 1}
+      end 
+
+      it 'should use template edit for rendering' do 
+        response.should render_template 'edit'
+      end 
+
+      it 'should make a movie available to that template' do 
+        assigns(:movie) == @movie
+      end 
     end 
   end 
 
