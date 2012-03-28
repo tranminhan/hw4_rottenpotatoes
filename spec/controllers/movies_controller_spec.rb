@@ -92,8 +92,21 @@ describe MoviesController do
       end 
     end 
 
+  describe 'update' do 
+    it 'should call movie find method' do 
+      mock_obj = mock('movie', :update_attributes! => 1, :title => 'a title')
+      Movie.should_receive(:find).with("1").and_return(mock_obj)
+      post :update, {:id => "1"}
+    end 
 
+    it 'should call movie instance update method' do 
+      mock_obj = mock('movie', :update_attributes! => 1, :title => 'a title')
+      Movie.stub(:find).with("1").and_return(mock_obj)
+      mock_obj.should_receive(:update_attributes!).and_return(1)
+      post :update, {:id => "1"}
+    end 
 
+  end 
 
   end 
 
