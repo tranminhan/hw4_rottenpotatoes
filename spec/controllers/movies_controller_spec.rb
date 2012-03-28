@@ -84,6 +84,12 @@ describe MoviesController do
         get :index, {:sort => 'release_date'}
         assigns(:date_header).should == 'hilite'
       end 
+
+      it 'should store selected ratings to session' do 
+        ratings = {'P' => "1", 'G' => "1"}
+        get :index, {:ratings => ratings }
+        session[:ratings].should == ratings
+      end 
     end 
 
 
